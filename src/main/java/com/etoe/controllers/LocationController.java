@@ -21,6 +21,8 @@ public class LocationController {
 	
 	@RequestMapping("/saveLoc")
 	public String saveLocation(@ModelAttribute("location") Location location, ModelMap modelMap ) {
+		// @ModelAttribute binds all the input fields in the JSP to the location object using the Location Model
+		// before entering the method body. ModelMap is used to send response back to the JSP page
 		Location savedLoc = locService.saveLocation(location);
 		String msg = "Location saved with id: " + savedLoc.getId();
 		modelMap.addAttribute("msg", msg);
