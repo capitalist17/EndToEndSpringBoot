@@ -7,6 +7,7 @@
 <title>Create Location</title>
 </head>
 <body>
+<pre>
 	<form action="" method="">
 		Id: <input type="text" name="id" />
 		Code: <input type="text" name="code" />
@@ -16,5 +17,6 @@
 			  
 		<input type="submit" value="save" />
 	</form>
+</pre>
 </body>
 </html>

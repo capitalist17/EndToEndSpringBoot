@@ -37,6 +37,15 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<!-- Without this dependency, you wont be able to embed the tomcat server in spring boot apps 
+		If this app were to be deployed as a war file, then this dependency is not required-->
+		<dependency>
+		    <groupId>org.apache.tomcat.embed</groupId>
+		    <artifactId>tomcat-embed-jasper</artifactId>
+		    <scope>provided</scope>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
