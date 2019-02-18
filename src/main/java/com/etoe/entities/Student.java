@@ -1,4 +1,4 @@
-package com.etoe.student.dal.entities;
+package com.etoe.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
