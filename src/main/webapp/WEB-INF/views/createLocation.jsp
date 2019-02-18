@@ -18,6 +18,8 @@
 		<input type="submit" value="save" />
 	</form>
 	${msg}
+	
+	<a href="displayLocations">View All</a>
 </pre>
 </body>
 </html>
