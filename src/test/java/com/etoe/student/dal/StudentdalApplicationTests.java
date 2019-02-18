@@ -25,5 +25,21 @@ public class StudentdalApplicationTests {
 		studentRepository.save(student);
 	}
 	
-
+	@Test
+	public void testfindStudentById() {
+		Student student = studentRepository.findById(1l).get();
+		System.out.println(student);
+	}
+	
+	@Test
+	public void testUpdateStudent() {
+		Student student = studentRepository.findById(1l).get();
+		student.setFee(40d);
+		studentRepository.save(student);
+	}
+	
+	@Test
+	public void testdeleteStudent() {
+		studentRepository.deleteById(1l);
+	}
 }
