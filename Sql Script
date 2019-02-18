@@ -1,0 +1,8 @@
+create database projectdb;
+
+create table studenttab(
+	id int primary key auto_increment,
+    sname varchar(20),
+    scourse varchar(30),
+    sfee int
+);
