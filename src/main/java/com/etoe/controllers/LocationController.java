@@ -26,13 +26,14 @@ public class LocationController {
 	EmailUtil emailUtil;
 	
 	@Autowired
+	LocationRepository locRepository;
+	
+	@Autowired
 	ReportUtil reportUtil;
 	
 	@Autowired
-	LocationRepository locationRepository;
+	ServletContext sc;
 	
-	@Autowired
-	ServletContext servletContext;
 	
 	@RequestMapping("/showCreate")
 	public String showCreate() {
@@ -94,8 +95,8 @@ public class LocationController {
 	
 	@RequestMapping("/generateReport")
 	public String generateReport() {
-		List<Object[]> data = locationRepository.findTypeAndTypeCount();
-		String path = servletContext.getRealPath("/");
+		List<Object[]> data = locRepository.findTypeAndTypeCount();
+		String path = sc.getRealPath("/");
 		reportUtil.generatePieChart(path, data);
 		return "report";
 	}
