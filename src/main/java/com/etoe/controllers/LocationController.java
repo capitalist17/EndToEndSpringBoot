@@ -40,7 +40,7 @@ public class LocationController {
 	}
 	
 	@RequestMapping("/deleteLocation")
-	public String deleteLocations(@RequestParam("id") Long id, ModelMap modelMap) {
+	public String deleteLocation(@RequestParam("id") Long id, ModelMap modelMap) {
 		// Fetch the location object
 		//Location location = locService.getLocationById(id); //this makes a DB call which can be avoided
 		
@@ -51,6 +51,22 @@ public class LocationController {
 		// Delete the location object
 		locService.deleteLocation(location);
 		
+		// Return the new list
+		List<Location> locations = locService.getAllLocations();
+		modelMap.addAttribute("locations", locations);
+		return "displayLocations";
+	}
+	
+	@RequestMapping("/showUpdate")
+	public String updateLocation(@RequestParam("id") Long id, ModelMap modelMap) {
+		Location location = locService.getLocationById(id);
+		modelMap.addAttribute("location", location);
+		return "updateLocation";
+	}
+	
+	@RequestMapping("/updateLoc")
+	public String updateLocation(@ModelAttribute("location") Location location, ModelMap modelMap ) {
+		locService.updateLocation(location);
 		// Return the new list
 		List<Location> locations = locService.getAllLocations();
 		modelMap.addAttribute("locations", locations);
