@@ -10,22 +10,24 @@
 </head>
 <body>
 
-<h2>Locations:</h2>
-<table>
-	<tr>
-		<th>id</th>
-		<th>code</th>
-		<th>name</th>
-		<th>type</th>
-	</tr>
-	<c:forEach items="${locations}" var="location">
-	<tr>
-		<td>${location.id}</td>
-		<td>${location.code}</td>
-		<td>${location.name}</td>
-		<td>${location.type}</td>
-	</tr>
-	</c:forEach>
-</table>
+	<h2>Locations:</h2>
+	<table>
+		<tr>
+			<th>id</th>
+			<th>code</th>
+			<th>name</th>
+			<th>type</th>
+		</tr>
+		<c:forEach items="${locations}" var="location">
+		<tr>
+			<td>${location.id}</td>
+			<td>${location.code}</td>
+			<td>${location.name}</td>
+			<td>${location.type}</td>
+		</tr>
+		</c:forEach>
+	</table>
+	
+	<a href="showCreate">Add Location</a>
 </body>
 </html>
