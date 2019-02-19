@@ -11,7 +11,7 @@ public interface LocationService {
 
 	void deleteLocation(Location location);
 
-	Location getLocationById(int id);
+	Location getLocationById(Long id);
 
 	List<Location> getAllLocations();
 }

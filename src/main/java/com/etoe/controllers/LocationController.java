@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.etoe.entities.Location;
 import com.etoe.services.LocationService;
@@ -33,6 +34,24 @@ public class LocationController {
 	
 	@RequestMapping("/displayLocations")
 	public String displayLocations(ModelMap modelMap) {
+		List<Location> locations = locService.getAllLocations();
+		modelMap.addAttribute("locations", locations);
+		return "displayLocations";
+	}
+	
+	@RequestMapping("/deleteLocation")
+	public String deleteLocations(@RequestParam("id") Long id, ModelMap modelMap) {
+		// Fetch the location object
+		//Location location = locService.getLocationById(id); //this makes a DB call which can be avoided
+		
+		// Alternate efficient method
+		Location location  = new Location();
+		location.setId(id);
+		
+		// Delete the location object
+		locService.deleteLocation(location);
+		
+		// Return the new list
 		List<Location> locations = locService.getAllLocations();
 		modelMap.addAttribute("locations", locations);
 		return "displayLocations";
