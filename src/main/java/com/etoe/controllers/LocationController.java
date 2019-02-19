@@ -11,11 +11,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.etoe.entities.Location;
 import com.etoe.services.LocationService;
+import com.etoe.util.EmailUtil;
 
 @Controller
 public class LocationController {
 	@Autowired
 	LocationService locService;
+	
+	@Autowired
+	EmailUtil emailUtil;
 	
 	@RequestMapping("/showCreate")
 	public String showCreate() {
@@ -29,6 +33,8 @@ public class LocationController {
 		Location savedLoc = locService.saveLocation(location);
 		String msg = "Location saved with id: " + savedLoc.getId();
 		modelMap.addAttribute("msg", msg);
+		// You can sent email to any account. But we will be using the one which we have created for testing
+		emailUtil.sendEmail("asnspring@gmail.com", "Location Saved", msg);
 		return "createLocation";
 	}
 	
