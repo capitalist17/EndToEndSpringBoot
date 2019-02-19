@@ -6,3 +6,10 @@ create table studenttab(
     scourse varchar(30),
     sfee int
 );
+
+create table location(
+	id int primary key auto_increment,
+    code varchar(20),
+    name varchar(20),    
+    type varchar(10)    
+);

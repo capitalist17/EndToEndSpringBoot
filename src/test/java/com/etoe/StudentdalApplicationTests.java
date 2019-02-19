@@ -1,4 +1,4 @@
-package com.etoe.student.dal;
+package com.etoe;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.etoe.student.dal.entities.Student;
-import com.etoe.student.dal.repos.StudentRepository;
+import com.etoe.entities.Student;
+import com.etoe.repos.StudentRepository;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

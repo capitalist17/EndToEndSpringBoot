@@ -1,13 +1,13 @@
-package com.etoe.student.dal;
+package com.etoe;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class StudentdalApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(StudentdalApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 }
