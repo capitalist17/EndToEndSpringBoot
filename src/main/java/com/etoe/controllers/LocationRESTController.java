@@ -27,6 +27,11 @@ public class LocationRESTController {
 		return locRepo.findAll();
 	}
 	
+	@GetMapping("/{id}")
+	public Location getLocation(@PathVariable("id") Long id){
+		return locRepo.findById(id).get();
+	}
+	
 	@PostMapping
 	public Location createLocation(@RequestBody Location location){
 		return locRepo.save(location);
